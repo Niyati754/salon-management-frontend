@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
 
@@ -10,10 +11,17 @@ const Navbar = () => {
     <nav className="absolute top-0 left-0 w-full z-50 text-white">
 
       <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-
-        <h1 className="text-2xl font-bold">
-          SALON
-        </h1>
+         <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-2">
+            <img
+              src={logo}
+              alt="Salon Logo"
+              className="h-14 w-14 object-contain cursor-pointer rounded-lg"
+            />
+          </Link>
+          {/* <h1 className="text-2xl font-bold">SALON</h1> */}
+        </div>
+        
 
         {/* Desktop Menu */}
 
@@ -24,6 +32,13 @@ const Navbar = () => {
           <Link to="/gallery">Gallery</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
+
+           <Link
+            to="/login"
+            className="bg-white text-black px-4 py-2 rounded hover:bg-gray-200 transition"
+          >
+            Login
+          </Link>
 
           <Link
             to="/appointment"
